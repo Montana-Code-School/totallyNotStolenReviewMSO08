@@ -1,10 +1,20 @@
 //Make a Javascript function that logs the current time every 3 seconds.
 
 function date() {
-  var currentDate = new Date();
-  var time = (currentDate.getHours() + ":" + currentDate.getMinutes() + ":" + currentDate.getSeconds());
-  console.log(time);
-  return time;
+  setInterval(function() {
+    var currentHours = new Date().getHours();
+    var currentMinutes = new Date().getMinutes();
+    var currentSeconds = new Date().getSeconds();
+    if (currentMinutes < 10) {
+      currentMinutes = "0" + currentMinutes;
+    }
+    if (currentSeconds < 10) {
+      currentSeconds = "0" + currentSeconds;
+    }
+    var time = (currentHours + ":" + currentMinutes + ":" + currentSeconds);
+    console.log(time);
+    return time;
+  }, 3000);
 }
 
 module.exports = date;

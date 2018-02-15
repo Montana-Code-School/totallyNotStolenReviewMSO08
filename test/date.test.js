@@ -9,6 +9,6 @@ describe("Return the time every few seconds", function() {
     expect(testDate).to.equalTime
   })
   it("returns the time every three seconds", function() {
-    
+
   })
 })
